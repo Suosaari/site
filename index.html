@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <title>UNKNOWN | ARG</title>
+  <style>html,body{height:100%;margin:0;background:#000}</style>
+  <script>
+    (function(){
+      var v = Date.now().toString();
+      var link = document.createElement('link');
+      link.rel='stylesheet';
+      link.href='styles.css?v='+v;
+      document.head.appendChild(link);
+      var script=document.createElement('script');
+      script.src='main.js?v='+v;
+      document.head.appendChild(script);
+    })();
+  </script>
+</head>
+<body>
+  <div id="gate-overlay"><div class="prompt">Нажмите любую клавишу</div></div>
+  <canvas id="wormhole"></canvas>
+  <main id="message" aria-hidden="true">
+    <h1 id="title"></h1>
+    <div id="lines"></div>
+  </main>
+</body>
+</html>
