@@ -94,6 +94,9 @@
     ['keydown','pointerdown','touchstart'].forEach(function(evt){
       window.addEventListener(evt,start,{once:true});
     });
+    // Доп. страховки на случай фокуса и захвата событий
+    document.addEventListener('keydown', start, { once:true });
+    if (overlay) overlay.addEventListener('pointerdown', start, { once:true });
   }
 
   window.addEventListener('resize',resize);
