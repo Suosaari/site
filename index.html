@@ -9,12 +9,13 @@
   <script>
     (function(){
       var v = Date.now().toString();
+      var isFile = location.protocol === 'file:';
       var link = document.createElement('link');
       link.rel='stylesheet';
-      link.href='styles.css?v='+v;
+      link.href = 'styles.css' + (isFile ? '' : ('?v='+v));
       document.head.appendChild(link);
       var script=document.createElement('script');
-      script.src='main.js?v='+v;
+      script.src = 'main.js' + (isFile ? '' : ('?v='+v));
       document.head.appendChild(script);
     })();
   </script>
