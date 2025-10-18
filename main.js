@@ -86,7 +86,15 @@
       (data.lines||[]).forEach(function(t){
         var p=document.createElement('p');p.textContent=t;linesEl.appendChild(p);
       });
-    }catch(e){}
+    }catch(e){
+      // Fallback для локального открытия file://
+      if (location.protocol === 'file:'){
+        titleEl.textContent='НЕИЗВЕСТНЫЙ';
+        linesEl.innerHTML='';
+        ['Он отдал себя, чтобы открыть путь.','Врата в Энд откликаются.','Выбор сделан — путь назад закрыт.']
+          .forEach(function(t){var p=document.createElement('p');p.textContent=t;linesEl.appendChild(p);});
+      }
+    }
   }
 
   function ready(){
